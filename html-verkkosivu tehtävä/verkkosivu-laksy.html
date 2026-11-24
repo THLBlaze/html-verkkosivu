@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matka-suosi</title>
+
+    <style>
+        body {
+            background-image: url("tausta.JPG");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            border-radius: 8px;
+            background-color: lightseagreen;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav li {
+            color: black;
+            cursor: pointer;
+        }
+        .hero {
+            background-color: #333;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            align-items: center;
+        }
+        .descriptions {
+            text-align: center;
+            font-size: 20px;
+            margin: 25px;
+        }
+        .products {
+            display: flex;
+            gap: 20px;
+            margin: 20px;
+        }
+        .page {
+            display:none;
+        }
+        .page.active {
+            display: block;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            flex: 1;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform:scale(1.03);
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        @media (max-width: 600px) {
+
+            .products {
+                flex-direction: column;
+            }
+        }
+        .logo {
+            background-color: aqua;
+            color: black;
+            padding: 20px 35px;
+        }
+        nav li:hover {
+            color:gray;
+        }
+        h1 {
+            text-align: center;
+            font-size: 45px;
+        }
+</style>
+</head>
+<body style="background-color: lightblue;">
+<nav>
+    <div class="logo">Matka-suosi</div>
+
+    <ul>
+        <li onclick="showPage('home')">Home</li>
+        <li onclick="showPage('products')">Products</li>
+        <li onclick="showPage('contact')">Contact</li>
+    </ul>
+    </nav>
+<section id="home" class="page">
+    <h1>MATKA-SUOSI</h1>
+
+    <div class="hero">
+        <img src="tausta.JPG">
+    </div>
+
+</section>
+    <p class="descriptions">
+        Matka-suosi suositellaan 3 parhaita
+        maahan mihin kannataa matkustaa
+    </p>
+<section id="products" class="page">
+    <div class="products">
+
+        <div class="card">
+            <h2>Shanghai</h2>
+            <img src="kuva1.JPG" class="product-img">
+            <p>shanghai on kiinassa kaupunki yö ovat todella
+            kaunista ja ihana paikka</p>
+        </div>
+        <div class="card">
+            <h2>Bangkok</h2>
+            <img src="kuva2.JPG" class="product-img">
+            <p>Bangkok kaunis kaupunki halpa ja todella hyvä ympäristö
+            siellä on isoja kauppoja ja hyviä ruokia sijaitsee thaimaassa</p>
+        </div>
+
+        <div class="card">
+            <h2>Pariisi</h2>
+            <img src="kuva3.JPG" class="product-img">
+            <p>Pariisi kaunis kaupunki ja hieno paikka
+            erilainen tunnelma ja todella hieno kaupunki sijaitsee ranskassa </p>
+        </div>
+    </div>
+    </section>
+<section id="contact" class="page">
+
+    <h1>Contact Us</h1>
+
+</section>
+<div class="contact-box">
+    <h2>ota yhteys</h2>
+    <p>puhelin:045332123</p>
+    <p>asiakaspalvelu: thammanun@gmail.com
+</div>
+        <script>
+            function showPage(pagename) {
+                let pages = document.querySelectorAll(".page");
+
+                pages.forEach(function(page) {
+                    page.classList.remove("active");
+
+                });
+                document.getElementById(pagename).classList.add("active");
+            }
+        </script>
+
+    </body>
+</html>
